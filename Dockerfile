@@ -1,3 +1,4 @@
-FROM edoburu/pgbouncer:1.12.0
-RUN  usermod -u 1500 iddqd
-RUN groupmod -g 1500 iddqd
+FROM dpage/pgadmin4:latest
+RUN sed -i 's/\[::\]/0.0.0.0/' /entrypoint.sh
+# This is just candy:
+SHELL ["/bin/sh"]
